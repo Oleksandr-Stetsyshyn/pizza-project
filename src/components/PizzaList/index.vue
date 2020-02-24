@@ -24,5 +24,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+div {
+  float: left;
+}
 
+img {width: 100px
+}
 </style>

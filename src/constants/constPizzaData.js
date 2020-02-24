@@ -83,7 +83,7 @@ export default [
         }
     },
     {
-        id: 5,
+        id:6,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 140,
@@ -97,7 +97,7 @@ export default [
         }
     },
     {
-        id: 5,
+        id: 7,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 110,
@@ -111,7 +111,7 @@ export default [
         }
     },
     {
-        id: 5,
+        id: 8,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 140,
@@ -125,7 +125,7 @@ export default [
         }
     },
     {
-        id: 5,
+        id: 9,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
@@ -139,7 +139,7 @@ export default [
         }
     },
     {
-        id: 5,
+        id: 10,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
@@ -153,7 +153,7 @@ export default [
         }
     },
     {
-        id: 5,
+        id: 11,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
@@ -167,7 +167,7 @@ export default [
         // }
     },
     {
-        id: 5,
+        id: 12,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
@@ -181,7 +181,7 @@ export default [
         // }
     },
     {
-        id: 5,
+        id: 13,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
@@ -195,7 +195,7 @@ export default [
         // }
     },
     {
-        id: 5,
+        id: 14,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
@@ -209,7 +209,7 @@ export default [
         // }
     },
     {
-        id: 5,
+        id: 15,
         name: "Піца Поло",
         img: 'https://is.gd/FWtPV3',
         price: 123,
