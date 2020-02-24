@@ -19,7 +19,7 @@ export default {
 
     computed: {
       imgPath() {
-        return `@/assets/images/${this.pizza.id}`; //немтудом
+        return require(`@/assets/images/${this.pizza.id}`); //немтудом
       }
     }
   }
