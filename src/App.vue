@@ -1,21 +1,23 @@
 <template>
   <div id="app">
-   <pizza-filters/>
-
-    <h1>Меню піц</h1>
-    <pizza-list  :pizzaList="products" />
+    <h1>JS-Pizza</h1>
+    <pizza-filters :ingredientsList="ingredients" />
+    <br />
+    <h2>Меню піц</h2>
+    <br />
+    <pizza-list :pizzaList="products" />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import PizzaFilters from '@/components/PizzaFilters'
-import PizzaList from '@/components/PizzaList'
-
-import PizzaDataArr from "@/constants/constPizzaData.js"; //база даних
+import PizzaFilters from "@/components/PizzaFilters";
+import PizzaList from "@/components/PizzaList";
+import PizzaDataArr from "@/constants/constPizzaData.js";
+import IngredientsDataArr from "@/constants/constIngredients.js";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // HelloWorld,
     PizzaFilters,
@@ -24,10 +26,11 @@ export default {
 
   data() {
     return {
-       products: PizzaDataArr 
-       };
+      products: PizzaDataArr,
+      ingredients: IngredientsDataArr
+    };
   }
-}
+};
 </script>
 
 <style>
@@ -38,5 +41,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+div {
+  background: #fc0;
+  padding: 20px;
 }
 </style>

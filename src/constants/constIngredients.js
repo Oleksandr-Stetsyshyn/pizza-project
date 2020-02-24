@@ -1,37 +1,32 @@
 export default [
     {
-        id: 1,
-        ingredient: "Сир",
-        img: '_1',
-        amount: 300,
+        id: 'cheese',
+        price: 17,
+        portion: 25,
+        availability: 30000
+    },
+    {
+        id: 'sausage',
+        price: 15,
+        portion: 25,
+        availability: 17000
+    },
+    {
+        id: 'pineapple',
         price: 12,
+        portion: 25,
+        availability: 11000
     },
     {
-        id: 2,
-        ingredient: "Ковбаса",
-        img: '_1',
-        amount: 300,
-        price: 10,
-    },
-    {
-        id: 3,
-        ingredient: "Ананас",
-        img: '_1',
-        amount: 300,
-        price: 11,
-    },
-    {
-        id: 4,
-        ingredient: "Руколла",
-        img: '_1',
-        amount: 300,
+        id: 'corn',
         price: 8,
+        portion: 25,
+        availability: 4000
     },
     {
-        id: 5,
-        ingredient: "Цибуля",
-        img: '_1',
-        amount: 300,
-        price: 4,
+        id: 'mushrooms',
+        price: 8,
+        portion: 25,
+        availability: 25000
     }
 ]
