@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "PizzaItem",
+  name: "PizzaItem", 
 
   props: {
     pizza: {
