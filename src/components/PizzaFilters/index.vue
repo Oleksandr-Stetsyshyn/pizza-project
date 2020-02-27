@@ -11,10 +11,13 @@
 
     <label v-for="(ingredientInfo, index) in ingredientsList" :key="index">
       <input type="checkbox" :value="ingredientInfo.id" v-model="checkedIngredient" />
-      {{ ingredientInfo.id }}
+      {{ ingredientInfo.name }}
     </label>
     <br />
-    <span>Ви обрали: {{ checkedIngredient }}</span>
+    <span>Перевірка що обрано: {{ checkedIngredient }}</span>
+    <br>
+    <br>
+    <button>Фільтрувати</button>
   </div>
 </template>
 

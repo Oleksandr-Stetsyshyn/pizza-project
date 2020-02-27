@@ -1,161 +1,152 @@
 export default [
     {
-        id: 1,
+        id: 'milano',
         name: "Піца Міланська",
         price: 124,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        amount: 600,
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
-        id: 2,
-        name: "Піца Італія",
-
+        id: "country",
+        name: "Селянська",
+        amount: 600,
         price: 130,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
-        id: 3,
-        name: "Піца Екзотик",
-        img: 'https://is.gd/FWtPV3',
+        id: 'italy',
+        name: "Піца італія",
         price: 153,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
-        id: 4,
+        id: 'exotic',
         name: "Піца Vitello",
-        img: 'https://is.gd/FWtPV3',
         price: 103,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
-        id: 5,
+        id: 'pollo',
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 100,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
         id: 5,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 120,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
-        id:6,
+        id: 6,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 140,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
         id: 7,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 110,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
         id: 8,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 140,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
         id: 9,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
         id: 10,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
-        ingredients: {
-            tomatoSauce: 1,
-            mozzarella: 1,
-            peperoni: 1,
-            corn: 1,
-            chicken: 1,
-            oregano: 1
-        }
+        ingredients: [
+            { id: 'creamSauce' },
+            { id: 'mozzarella' },
+            { id: 'ham' },
+            { id: 'salami' },
+            { id: 'bacon' },
+            { id: 'oregano' }
+        ]
     },
     {
         id: 11,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
         ingredients: {
             tomatoSauce: 1,
@@ -169,7 +160,6 @@ export default [
     {
         id: 12,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
         ingredients: {
             tomatoSauce: 1,
@@ -183,7 +173,6 @@ export default [
     {
         id: 13,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
         ingredients: {
             tomatoSauce: 1,
@@ -197,7 +186,6 @@ export default [
     {
         id: 14,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
         ingredients: {
             tomatoSauce: 1,
@@ -211,7 +199,6 @@ export default [
     {
         id: 15,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
         ingredients: {
             tomatoSauce: 1,
@@ -225,7 +212,6 @@ export default [
     {
         id: 5,
         name: "Піца Поло",
-        img: 'https://is.gd/FWtPV3',
         price: 123,
         ingredients: {
             tomatoSauce: 1,

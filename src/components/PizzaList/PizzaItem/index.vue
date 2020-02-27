@@ -2,10 +2,7 @@
   <div>
     <h2>{{ pizza.name }}</h2>
     <img :src="imgPath" />
-
-    <!-- <img src="@/assets/images/1.jpg" /> 
-    <img :src="require(`@/assets/images/${id}.jpg`)" />-->
-    <li v-for="(value, name) in pizza.ingredients" :key="name">{{name}}</li>
+    <li v-for="item in pizza.ingredients" :key="item.id">{{ item.id }}</li>
   </div>
 </template>
 
