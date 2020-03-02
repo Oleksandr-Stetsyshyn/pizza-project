@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import PizzaItem from "@/components/PizzaList/PizzaItem";
+import PizzaItem from "./c/PizzaItem";
 
 export default {
   name: "PizzaList",
