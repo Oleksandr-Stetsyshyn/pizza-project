@@ -21,7 +21,7 @@ export default {
   name: "PizzaMenuPage",
   components: {
     PizzaFilters,
-    PizzaList
+    PizzaList,
   },
 
   data() {
