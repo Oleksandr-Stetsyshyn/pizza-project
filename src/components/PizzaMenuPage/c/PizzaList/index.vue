@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="columns is-gapless is-multiline is-mobile">
     <pizza-item v-for="(pizza,index) in pizzaList" :key="index" :pizza="pizza" />
   </div>
 </template>
