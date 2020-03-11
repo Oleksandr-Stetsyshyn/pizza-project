@@ -10,21 +10,21 @@ export default [
         name: "Міланська",
         price: 124,
         amount: 600,
-        ingredients: ['creamSauce', 'mozzarella', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'salami', 'bacon', 'oregano']
     },
     {
         id: "country",
         name: "Селянська",
         amount: 600,
         price: 130,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'feta', 'bacon', 'oregano']
 
     },
     {
         id: 'italy',
         name: "Італія",
         price: 153,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'bacon', 'oregano']
 
     },
     {
@@ -38,7 +38,7 @@ export default [
         id: 'pollo',
         name: "Поло",
         price: 100,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'bacon', 'oregano']
 
     },
     {
@@ -52,49 +52,49 @@ export default [
         id: 'hawaii',
         name: "Гавайська",
         price: 140,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'pineapple', 'mozzarella', 'ham', 'salami', 'bacon', 'oregano']
 
     },
     {
         id: 'margherita',
         name: "Маргарита",
         price: 140,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'feta', 'bacon', 'oregano']
 
     },
     {
         id: 'pepperoni ',
         name: "Пепероні",
         price: 123,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'pineapple', 'mozzarella', 'ham', 'salami', 'bacon', 'oregano']
 
     },
     {
         id: 'prosciutto',
         name: "Прошутто",
         price: 123,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'feta', 'bacon', 'oregano']
 
     },
     {
         id: 'quattroFormaggio',
         name: "Чотири сири",
         price: 123,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'bacon', 'oregano']
 
     },
     {
         id: 'quattroStagioni',
         name: "Чотири сезона",
         price: 123,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'pineapple', 'mozzarella', 'ham', 'feta', 'bacon', 'oregano']
 
     },
     {
         id: 'vitello',
         name: "Віталік",
         price: 123,
-        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'feta', 'bacon', 'oregano']
+        ingredients: ['creamSauce', 'mozzarella', 'ham', 'salami', 'bacon', 'oregano']
 
     }
 ]
