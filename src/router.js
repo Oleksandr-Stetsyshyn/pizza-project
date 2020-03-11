@@ -11,7 +11,6 @@ import Delivery from "@/pages/Delivery";
 import Stock from "@/pages/Stock";
 
 
-
 Vue.use(VueRouter);
 
 
@@ -24,7 +23,7 @@ const routes = [
 {path: "/menu", component: Menu},
 {path: "/pizzaList", component :PizzaList},
 {path: "/addPizza", component: AddPizza},
-{ path: "/addIngredients/:pizzaid", component: AddIngredients }
+{ path: "/addIngredients/:pizzaId", component: AddIngredients }
 ];
 
 const router = new VueRouter({

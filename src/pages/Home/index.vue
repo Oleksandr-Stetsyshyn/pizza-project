@@ -3,7 +3,7 @@
     <b-carousel>
       <b-carousel-item v-for="(item, i) in 6" :key="i">
         <span class="image">
-          <img :src="getImgUrl(i)" />
+          <img :src="getImgUrl(i+1)" />
         </span>
       </b-carousel-item>
     </b-carousel>
@@ -30,8 +30,8 @@ export default {
   },
   methods: {
     getImgUrl(value) {
-      // return require(`@/assets/images/${value}.jpg`);
-       return `https://picsum.photos/id/43${value}/1230/500`
+      return require(`@/assets/images/${value}.jpg`);
+      //  return `https://picsum.photos/id/43${value}/1230/500`
     }
   }
 };
