@@ -18,10 +18,11 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <a class="button is-primary">
+            <!-- <a class="button is-primary" >
               <strong>Вхід</strong>
-            </a>
-            <a class="button is-light">Кошик</a>
+            </a> -->
+            <router-link class="button is-primary" tag="button" to="/login"> <strong>Вхід</strong></router-link>
+            <router-link class="button is-light" tag="button" to="/basket"> <strong>Приготувати</strong></router-link>
           </div>
         </b-navbar-item>
       </template>

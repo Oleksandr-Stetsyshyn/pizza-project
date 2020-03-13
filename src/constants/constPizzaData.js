@@ -1,4 +1,4 @@
-export default [
+  export default [
     {
         id: 'constructor',
         name: "Конструктор",
