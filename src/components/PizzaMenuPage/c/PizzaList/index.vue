@@ -9,7 +9,6 @@ import PizzaItem from "./c/PizzaItem";
 
 export default {
   name: "PizzaList",
-
   components: {
     PizzaItem
   },
