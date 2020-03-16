@@ -7,29 +7,25 @@
     </div>
     <div class="card-content">
       <h3>{{ pizza.name }}</h3>
-      <br />
-      <button>
-        <router-link :to="`/addIngredients/${pizza.id}`">Додати інгрідієнт</router-link>
-      </button>
-      <button>Замовити</button>
+
       <div class="content">
-        <li v-for="item in pizza.ingredients" :key="item">{{ item }}</li>
+        <h6>Склад:</h6>
+        <label v-for="item in pizza.ingredients" :key="item">{{item}}, </label>
+      </div>
+
+      <div>
+      <router-link class="button is-text is-right" tag="button" :to="`/addIngredients/${pizza.id}`">
+        <strong>+інгрідієнт</strong>
+      </router-link>
+
+        <router-link class="button is-success" tag="button" to="/">
+        <strong>Замовити</strong>
+      </router-link>
+   
+      
       </div>
     </div>
   </div>
-
-  <!-- <div>
-    <h2>{{ pizza.name }}</h2>
-    <img :src="imgPath" />
-
-    <li v-for="item in pizza.ingredients" :key="item.id">{{ item.id }}</li>  це для обьекта
-
-    <li v-for="item in pizza.ingredients" :key="item">{{ item }}</li>
-    <router-link :to="`/addIngredients/${pizza.id}`">Додати інгрідієнт</router-link>
-
-    <br />
-    <button>Замовити</button>
-  </div>-->
 </template>
 
 <script>
@@ -49,5 +45,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+.card {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 </style>

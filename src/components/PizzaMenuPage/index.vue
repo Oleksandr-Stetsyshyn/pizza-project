@@ -1,19 +1,25 @@
 <template>
   <div class="columns is-multiline is-mobile">
-  <div class="column is-one-fifth">  <h2>Меню піц</h2>
-    <pizza-filters
-      :ingredientsList="ingredients"
-      @clickFilterBtn="filterByIngredients"
-      class="filter"
-    /></div>
+    <div class="column is-2">
+      <h2>Меню піц</h2>
+      <!-- <pizza-filters :ingredientsList="ingredients" @clickFilterBtn="filterByIngredients" class="filter"/> фільтр по кнопці -->
+      <pizza-filters
+        :ingredientsList="ingredients"
+        @clickFilterBtn="filterByIngredients"
+        class="filter"
+      />
+    </div>
 
- <div class="column"><pizza-list :pizzaList="filteredPizzaList" class="content" /></div>
+    <div class="column">
+      <pizza-list :pizzaList="filteredPizzaList" class="content" />
+    </div>
   </div>
 </template>
 
 <script>
 import PizzaFilters from "@/components/PizzaMenuPage/c/PizzaFilters";
 import PizzaList from "@/components/PizzaMenuPage/c/PizzaList";
+
 import PizzaDataArr from "@/constants/constPizzaData.js";
 import IngredientsDataArr from "@/constants/constIngredients.js";
 
@@ -21,7 +27,7 @@ export default {
   name: "PizzaMenuPage",
   components: {
     PizzaFilters,
-    PizzaList,
+    PizzaList
   },
 
   data() {
@@ -39,7 +45,7 @@ export default {
         this.filteredPizzaList = this.pizzaReceptsArr;
       } else {
         this.filteredPizzaList = [];
-         for (let i = 0; i < this.pizzaReceptsArr.length; i++) {
+        for (let i = 0; i < this.pizzaReceptsArr.length; i++) {
           for (let k = 0; k < selectedIngredients.length; k++) {
             if (
               this.pizzaReceptsArr[i].ingredients.includes(
@@ -55,6 +61,9 @@ export default {
           this.isInclude = 0;
         }
       }
+      if (this.filteredPizzaList.length == 0) {
+        this.filteredPizzaList.push(this.pizzaReceptsArr[0]);
+      }
     }
   }
 };
@@ -69,6 +78,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 } */
-/*   */
-
 </style>

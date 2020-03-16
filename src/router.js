@@ -9,7 +9,7 @@ import Basket from "@/pages/Basket";
 import AddPizza from "@/pages/AddPizza";
 import AddIngredients  from "@/pages/AddIngredients"
 import Home from "@/pages/Home";
-import Login from "@/pages/Login";
+// import AddForm from "@/pages/AddForm";
 import Delivery from "@/pages/Delivery";
 import Stock from "@/pages/Stock";
 
@@ -20,7 +20,7 @@ Vue.use(VueRouter);
 
 const routes = [
 {path: "/", component: Home},
-{path: "/login", component: Login},
+// {path: "/addForm", component: AddForm},
 {path: "/basket", component: Basket},
 {path: "/about", component: About},
 {path: "/delivery", component: Delivery},

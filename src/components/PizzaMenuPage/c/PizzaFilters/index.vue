@@ -1,15 +1,12 @@
 <template>
   <div>
-    <li v-for="(ingredientInfo, index) in ingredientsList" :key="index">
-      
-      <input type="checkbox" :value="ingredientInfo.id" v-model="checkedIngredient" />
-      {{ ingredientInfo.name }}
+    <li class="checkbox" v-for="(ingredient, index) in ingredientsList" :key="index">
+      <input type="checkbox" :value="ingredient.id" v-model="checkedIngredient" />
+      <!-- <img :src="imgIngredientsPath" /> -->
+      {{ingredient.name}}
     </li>
-    <br />
+
     <span>Перевірка що обрано: {{ checkedIngredient }}</span>
-    <br />
-    <br />
-    <button @click="clcFilter">Фільтрувати</button>
   </div>
 </template>
 
@@ -30,11 +27,23 @@ export default {
     };
   },
 
-  methods: {
-    clcFilter() {
-      this.$emit("clickFilterBtn", this.checkedIngredient)
+  watch: {
+    checkedIngredient() {
+      this.$emit("clickFilterBtn", this.checkedIngredient);
     }
-  }
+  },
+
+  // computed: {
+  //   imgIngredientsPath() {
+  //     return require(`@/assets/images/ingredients/${this.ingredient.id}.jpg`);
+  //   }
+  // }
+
+  // methods: {
+  //   clcFilter() {
+  //     this.$emit("clickFilterBtn", this.checkedIngredient);
+  //   }
+  // }
 };
 </script>
 

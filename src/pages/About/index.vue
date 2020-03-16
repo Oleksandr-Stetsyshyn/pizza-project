@@ -1,28 +1,35 @@
 <template>
-<div class="tile is-ancestor">
-  <div class="tile is-vertical is-8 container is-widescreen">
-    <div class="tile">
-      <div class="tile is-parent">
-        <article class="tile is-child notification">
-          <p class="title">Про нас</p>
-          <p class="subtitle">Історія нашої піцерії</p>
-          <figure class="image is-4by3">
-            <img src="https://i.pinimg.com/originals/b3/1c/4b/b31c4bc469e7dd9f1fb9e55cfa1a5730.jpg">
-          </figure>
-          <div class="content">
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.
-
-Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.
-
-Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8 container is-widescreen">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification">
+            <p class="title">Про нас</p>
+            <p class="subtitle">Історія нашої піцерії</p>
+            <figure class="image is-4by3">
+              <img
+                src="https://i.pinimg.com/originals/b3/1c/4b/b31c4bc469e7dd9f1fb9e55cfa1a5730.jpg"
+              />
+            </figure>
+            <div class="content">
+              Riccio di Mare працює з 1915 року, радуючи соковитою італійською піцою Ужгород та дорогих гостей міста. Левова частка місцевих поціновувачів найпопулярнішого в світі наїдку вважають, що Viva Pizza – найзручніший сервіс замовлення піци онлайн в Ужгороді. І вони мають на це, як мінімум, п’ять причин:
+               Широкий асортимент піци зі старанно відібраними інгредієнтами, що дарують вишуканий аромат, повною мірою задовольнить апетити найвибагливішого гурмана.
+               Конструктор піци – унікальна можливість для кожного уявити себе справжнім піцейолою. Додавайте в піцу інгредієнти на власний смак, і отримаєте власноруч створений кулінарний шедевр.
+               Телефонувати і розраховуватися готівкою не обов’язково. Замовляйте і оплачуйте безпосередньо на сайті. Це швидше і зручніше.
+               Однак для клієнтів, які бажають замовити піцу по телефону, ми запровадили єдиний номер для найпоширеніших операторів мобільного зв’язку.
+              
+              Набираєте, і ми приймаємо замовлення.
+               У нас працює англомовна версія сайту. Тож люди, які володіють англійською краще, ніж українською, мають можливість отримати піцу на замовлення і розрахуватися за неї онлайн, не сказавши навіть слова.
+              Бажаємо, щоби своїм смаком підкорила наша піца Ужгород. Доставка через це працює оперативно і безкоштовно. Готуємо піцу у строгій відповідності до всіх вимог технології та гігієни, а кур’єри завжди охайні і ввічливі.
+              Ціни на оригінальну італійську піцу у нас завжди доступні, а спеціальні пропозиції порадують Вас приємними сюрпризами.
+              Замовляйте піцу з соусом та улюбленим напоєм онлайн і отримуйте незабутнє гастрономічне задоволення.
+              З любов’ю, Riccio di Mare.
+            </div>
+          </article>
         </div>
-        </article>
       </div>
     </div>
-
   </div>
-
-</div>
 </template>
 
 <script>
