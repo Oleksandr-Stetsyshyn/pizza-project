@@ -1,9 +1,9 @@
 <template>
   <div>
-    <li class="checkbox" v-for="(ingredient, index) in ingredientsList" :key="index">
-      <input type="checkbox" :value="ingredient.id" v-model="checkedIngredient" />
-      <!-- <img :src="imgIngredientsPath" /> -->
-      {{ingredient.name}}
+    <li class="checkbox column is-narrow" v-for="(ingredientInfo, index) in ingredientsList" :key="index">
+      <input type="checkbox" :value="ingredientInfo.id" v-model="checkedIngredient" />
+      <img :src='require(`@/assets/images/ingredients/${ingredientInfo.id}.jpg`)' width="40"/>
+      {{ ingredientInfo.name }}
     </li>
 
     <span>Перевірка що обрано: {{ checkedIngredient }}</span>
@@ -33,11 +33,7 @@ export default {
     }
   },
 
-  // computed: {
-  //   imgIngredientsPath() {
-  //     return require(`@/assets/images/ingredients/${this.ingredient.id}.jpg`);
-  //   }
-  // }
+  
 
   // methods: {
   //   clcFilter() {

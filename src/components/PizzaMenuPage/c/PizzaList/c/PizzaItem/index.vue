@@ -10,7 +10,9 @@
 
       <div class="content">
         <h6>Склад:</h6>
-        <label v-for="item in pizza.ingredients" :key="item">{{item}}, </label>
+        <li v-for="item in pizza.ingredients" :key="item">{{item}}, </li>
+        <!-- <img :src='require(`@/assets/images/ingredients/${item}.jpg`)' width="40"/> -->
+        
       </div>
 
       <div>

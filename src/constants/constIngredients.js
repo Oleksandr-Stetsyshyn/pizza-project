@@ -12,7 +12,7 @@ export default [
         weight: 50,
         species: "sauces"
     }, {
-        id: 'spicyTomatoSauce',
+        id: 'spicySauce',
         name: 'Соус томатний гострий',
         price: 12,
         weight: 50,
