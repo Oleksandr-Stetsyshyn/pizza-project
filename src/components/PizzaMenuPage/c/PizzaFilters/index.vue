@@ -1,10 +1,18 @@
 <template>
   <div>
-    <li class="checkbox column is-narrow" v-for="(ingredientInfo, index) in ingredientsList" :key="index">
-      <input type="checkbox" :value="ingredientInfo.id" v-model="checkedIngredient" />
-      <img :src='require(`@/assets/images/ingredients/${ingredientInfo.id}.jpg`)' width="40"/>
-      {{ ingredientInfo.name }}
-    </li>
+    <section>
+      <b-field v-for="(ingredientInfo, index) in ingredientsList" :key="index">
+        <b-checkbox-button
+          v-model="checkedIngredient"
+          :native-value="ingredientInfo.id"
+          type="is-success"
+        >
+          <b-icon icon="check"></b-icon>
+          <img :src="require(`@/assets/images/ingredients/${ingredientInfo.id}.jpg`)" width="20" />
+          <span>{{ ingredientInfo.name }}</span>
+        </b-checkbox-button>
+      </b-field>
+    </section>
 
     <span>Перевірка що обрано: {{ checkedIngredient }}</span>
   </div>
@@ -31,9 +39,7 @@ export default {
     checkedIngredient() {
       this.$emit("clickFilterBtn", this.checkedIngredient);
     }
-  },
-
-  
+  }
 
   // methods: {
   //   clcFilter() {

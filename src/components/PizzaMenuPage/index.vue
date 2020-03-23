@@ -2,7 +2,7 @@
   <div class="columns is-multiline is-mobile">
     <div class="column is-2">
       <h2>Меню піц</h2>
-      <!-- <pizza-filters :ingredientsList="ingredients" @clickFilterBtn="filterByIngredients" class="filter"/> фільтр по кнопці -->
+
       <pizza-filters
         :ingredientsList="ingredients"
         @clickFilterBtn="filterByIngredients"
@@ -22,6 +22,8 @@ import PizzaList from "@/components/PizzaMenuPage/c/PizzaList";
 
 import PizzaDataArr from "@/constants/constPizzaData.js";
 import IngredientsDataArr from "@/constants/constIngredients.js";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "PizzaMenuPage",
@@ -65,8 +67,18 @@ export default {
         this.filteredPizzaList.push(this.pizzaReceptsArr[0]);
       }
     }
-  }
+  },
+ 
+
+
+  computed: {
+    ...mapGetters("pizzaRecipe", ["getPizzaList"]),
+    list() {
+      return this.getPizzaList();
+    }
+  },
 };
+
 </script>
 
 <style>

@@ -27,14 +27,15 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <!-- <a class="button is-primary" >
-              <strong>Вхід</strong>
-            </a>-->
+            <router-link class="button is-light" tag="button" to="/basket">
+              <strong>
+                Готувати
+                <b-tag type="is-warning is-rounded">{{ getProductsCountInCart }}</b-tag> піц
+              </strong>
+            </router-link>
+
             <router-link class="button is-primary" tag="button" to="/login">
               <strong>Вхід</strong>
-            </router-link>
-            <router-link class="button is-light" tag="button" to="/basket">
-              <strong>Приготувати</strong>
             </router-link>
           </div>
         </b-navbar-item>
@@ -45,11 +46,7 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Pizza by "Riccio di Mare"</strong> by
-          <a href="https://jgthms.com">Oleksandr Stetsyshyn</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed
-          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          <strong>Pizza by "Riccio di Mare"</strong>
         </p>
       </div>
     </footer>
@@ -57,8 +54,16 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
-  name: "App"
+  name: "App",
+  computed: {
+    ...mapGetters("cart", ["getProductsCountInCart"]),
+    cartLenght() {
+      return this.getProductsCountInCart();
+    }
+  },
 };
 </script>
 
