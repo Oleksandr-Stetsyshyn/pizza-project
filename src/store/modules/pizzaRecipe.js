@@ -101,7 +101,7 @@ export default {
 
             }
         ],
-        filteredPizzaList:[]
+        filteredPizzaRecipe:[]
     },
 
     getters: {

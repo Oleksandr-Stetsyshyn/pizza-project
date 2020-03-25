@@ -7,13 +7,15 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-     
+
     },
     mutations: {},
     actions: {},
     getters: {},
-    modules: {cart,
-        pizzaRecipe}
+    modules: {
+        cart,
+        pizzaRecipe
+    }
 })
 
 export default store;

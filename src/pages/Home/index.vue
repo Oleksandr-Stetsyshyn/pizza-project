@@ -8,6 +8,18 @@
       </b-carousel-item>
     </b-carousel>
 
+<div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        Популярна піца
+      </p>
+      <p class="subtitle">
+        Наша піца найкраща
+      </p>
+    </div>
+  </div>
+
+
     <div class="column">
       <pizza-list :pizzaList="pizzaReceptsArr" class="content" />
     </div>

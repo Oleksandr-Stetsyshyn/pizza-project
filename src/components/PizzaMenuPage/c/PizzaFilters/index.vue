@@ -1,6 +1,8 @@
 <template>
   <div>
     <section>
+    <span>Обрано: {{ checkedIngredient }}</span>
+     
       <b-field v-for="(ingredientInfo, index) in ingredientsList" :key="index">
         <b-checkbox-button
           v-model="checkedIngredient"
@@ -13,8 +15,6 @@
         </b-checkbox-button>
       </b-field>
     </section>
-
-    <span>Перевірка що обрано: {{ checkedIngredient }}</span>
   </div>
 </template>
 
@@ -41,11 +41,6 @@ export default {
     }
   }
 
-  // methods: {
-  //   clcFilter() {
-  //     this.$emit("clickFilterBtn", this.checkedIngredient);
-  //   }
-  // }
 };
 </script>
 
