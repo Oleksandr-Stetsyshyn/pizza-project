@@ -21,7 +21,7 @@
 import PizzaDataArr from "@/constants/constPizzaData.js";
 
 export default {
-  name: "AddIngredients",
+  name: "AddIngredientsToItem",
 
   data() {
     return {

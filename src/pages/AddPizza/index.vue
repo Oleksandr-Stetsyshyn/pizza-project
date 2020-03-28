@@ -28,12 +28,12 @@
 
                 <div>
                   Оберіть інгрідієнти
-                  <pizza-filters class="tile is-vertical is-5 container is-widescreen"
+                  <pizza-filters
+                    class="tile is-vertical is-5 container is-widescreen"
                     :ingredientsList="ingredients"
-                    @clickFilterBtn="filterByIngredients"                   
+                    @clickFilterBtn="filterByIngredients"
                   />
                 </div>
-
               </div>
               <div class="level">
                 <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>

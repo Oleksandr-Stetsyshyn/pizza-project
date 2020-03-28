@@ -24,7 +24,7 @@
         >
           <strong>+інгрідієнт</strong>
         </router-link>
-        <button class="button is-success" tag="button" @click=" (pizza.id)">
+        <button class="button is-success" tag="button" @click="onAddToCart(pizza.id)">
           <strong>Замовити</strong>
         </button>
       </div>
