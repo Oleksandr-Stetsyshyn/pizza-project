@@ -10,10 +10,5 @@ var firebaseConfig = {
     messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGE_SENDER_ID,
     appId: process.env.VUE_APP_FIREBASE_APP_ID
   };
-  // console.log('firebaseConfig');
-  // console.log(process.env);
-  
-  // console.log(firebaseConfig);
-  
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig)

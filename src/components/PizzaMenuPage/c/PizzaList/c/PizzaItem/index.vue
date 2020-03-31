@@ -14,16 +14,18 @@
           <img :src="require(`@/assets/images/ingredients/${item}.jpg`)" width="20" />
           {{item}}
         </li>
+
+<router-link
+          class="button is-text is-right"
+          tag="button"
+          :to="`/addIngredientsToItem/${pizza.id}`"
+        >
+          <strong>+інгрeдієнт</strong>
+        </router-link>
        </div>
       <h3>{{ pizza.price }} Грн.</h3>
       <div>
-        <router-link
-          class="button is-text is-right"
-          tag="button"
-          :to="`/addIngredients/${pizza.id}`"
-        >
-          <strong>+інгрідієнт</strong>
-        </router-link>
+        
         <button class="button is-success" tag="button" @click="onAddToCart(pizza.id)">
           <strong>Замовити</strong>
         </button>

@@ -4,46 +4,90 @@
       <div class="tile">
         <div class="tile is-parent">
           <article class="tile is-child notification">
-            <p class="title">Новий рецепт</p>
-            <p class="subtitle">Вітаю, Шеф, що будемо сьогодні готувати?</p>
-            <figure class="image is-4by3">
-              <img
-                src="https://scontent.fiev2-1.fna.fbcdn.net/v/t1.0-9/43530816_1096167020563985_4321571727885729792_n.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_oc=AQnAre7QFI01nnYXf5jnBj-ZQRzG0ipODRp3YR13E8JimCCoJvh64Gs5kYboct_qQeE&_nc_ht=scontent.fiev2-1.fna&oh=3c414ba62f804be2029e3e4fc4b77c54&oe=5EA1335D"
-              />
-            </figure>
+            <p class="title">Редагування рецептів</p>
+            <p class="subtitle">Додайте новий рецепт</p>
+                      <div class="content">
+              
+                <section>
+                  <b-field>
+                    <b-input placeholder="Id" type="text" v-model="recipeId" required></b-input>
+                  </b-field>
+                  <b-field>
+                    <b-input placeholder="Назва" type="text" v-model="name" required></b-input>
+                  </b-field>
+                  <b-field>
+                    <b-input
+                      placeholder="Ціна"
+                      type="number"
+                      min="50"
+                      max="250"
+                      v-model="price"
+                      required
+                    ></b-input>
+                  </b-field>
 
-            <div class="content">Доброго дня піцоло, що будемо сьогодні готувати?</div>
+                  <h3>Інгрідієнти:</h3>
 
-            <div>
-              <div>
-                <b-field horizontal label="Назва піцци">
-                  <b-input type="text" v-model="title" required expanded></b-input>
-                </b-field>
-                <b-field horizontal label="Фото лінк">
-                  <b-input type="text" v-model="imageSrc" required expanded></b-input>
-                </b-field>
-                <b-field horizontal label="Ціна">
-                  <b-input type="number" v-model="price" required expanded></b-input>
-                </b-field>
+                 <!-- не відображається -->
+                 <IngredientsChecker/>
+                 
+                  <!-- <div class="block">
+                    <b-radio v-model="species" name="name" native-value="sauces">Соуси</b-radio>
+                    <b-radio v-model="species" name="name" native-value="cheeses">Сири</b-radio>
+                    <b-radio v-model="species" name="name" native-value="vegetables">Зелень</b-radio>
+                    <b-radio v-model="species" name="name" native-value="meat">Мясо і риба</b-radio>
+                  </div>
+                  <p class="content">
+                    <b>Selection:</b>
+                    {{ species }}
+                  </p> -->
 
-                <div>
-                  Оберіть інгрідієнти
-                  <pizza-filters
-                    class="tile is-vertical is-5 container is-widescreen"
-                    :ingredientsList="ingredients"
-                    @clickFilterBtn="filterByIngredients"
-                  />
+                  <div>
+                    Фото:
+                    <input type="file" @change="onSelect" />
+                    <img v-if="tmpImage" :src="tmpImage" class="img" />
+                  </div>
+                  <br />
+                  <div class="level">
+                    <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>
+                    <b-button
+                      type="is-success"
+                      class="level-right"
+                      :disabled="!isDataValid"
+                      @click="onSave"
+                    >{{ buttonTitle }}</b-button>
+                  </div>
+                </section>
+                <br />
+                <br />
+                <label>База даних інгрідієнтів підключена до firebase</label>
+                <br />
+                <div v-if="isLoading">Loading ...</div>
+                <div v-if="isError">Помилка, їжте хліб</div>
+                <div v-if="!isLoading && ! isError">
+                  <table border="2px">
+                    <tr>
+                      <td>Id</td>
+                      <td>Назва</td>
+                      <td>Ціна</td>
+                      <td>Фото</td>
+                      <td>Редагування</td>
+                    </tr>
+                    <tr v-for="recipe in getRecipesList" :key="recipe.id">
+                      <td>{{ recipe.id }}</td>
+                      <td>{{ recipe.name }}</td>
+                      <td>{{ recipe.price }}</td>
+                      <td>
+                        <img v-if="recipe.img" :src="recipe.img" class="img" />
+                      </td>
+                      <td>
+                        <button @click="onDelete(recipe.id)">Видалити</button>
+                        <button @click="onEdit(recipe)">Редагувати</button>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
-              </div>
-              <div class="level">
-                <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>
-                <b-button
-                  type="is-success"
-                  class="level-right"
-                  :disabled="!isDataValid"
-                  @click="onAdd"
-                >Add</b-button>
-              </div>
+              
             </div>
           </article>
         </div>
@@ -54,41 +98,111 @@
 
 
 
+
+
+
 <script>
-import store from "@/store";
-import IngredientsDataArr from "@/constants/constIngredients.js";
-import PizzaFilters from "@/components/PizzaMenuPage/c/PizzaFilters";
+// import store from "@/store";
+import { mapGetters, mapActions } from "vuex";
+import IngredientsChecker from "@/components/IngredientsChecker";
 
 export default {
-  name: "AddPizza",
-  components: {
-    PizzaFilters
+  name: "AddNewRecipe",
+components: {
+   IngredientsChecker
   },
   data() {
     return {
-      title: null,
-      imageSrc: null,
+      recipeId: null,
+      name: null,
       price: null,
-      description: null,
-      ingredients: IngredientsDataArr
+      // weight: null,
+      species: null,
+      img: null,
+      tmpImage: null
     };
   },
-
   computed: {
+    ...mapGetters(["getRecipesList", "isLoading", "isError"]),
+
+    buttonTitle() {
+      return this.recipeId ? "Save" : "Add";
+    },
+
     isDataValid() {
-      return this.title && this.imageSrc && this.price > 0 && this.description;
+      return (
+        this.recipeId &&
+        this.name &&
+        this.price > 0 &&
+        // this.weight &&
+        this.species
+      );
     }
   },
 
   methods: {
-    onAdd() {
-      store.addProduct(this.title, this.imageSrc, this.price, this.description);
+    ...mapActions([
+      "loadRecipesList",
+      "saveRecipe",
+      "deleteRecipe"
+    ]),
+
+    onSave() {
+      this.saveRecipe({
+        recipeId: this.recipeId,
+        name: this.name,
+        price: this.price,
+        // weight: this.weight,
+        species: this.species,
+        img: this.tmpImage
+      });
+      this.clearData();
     },
+
+    clearData() {
+      this.recipeId = null;
+      this.name = null;
+      this.price = null;
+      // this.weight = null;
+      this.species = null;
+    },
+
+    onDelete(id) {
+      this.deleteRecipe({ id });
+      // this.clearData();
+    },
+
+    onEdit(recipe) {
+      this.recipeId = recipe.id;
+      this.name = recipe.name;
+      this.price = recipe.price;
+      this.species = recipe.species;
+      this.tmpImage = recipe.img;
+    },
+
     onCancel() {
       this.$router.push({ path: "/" });
+    },
+    onSelect(e) {
+      console.log(e);
+
+      const reader = new FileReader();
+      const self = this;
+      reader.onloadend = function(e) {
+        self.tmpImage = e.target.result;
+      };
+      reader.readAsDataURL(e.target.files[0]);
     }
+  },
+
+  mounted() {
+    this.loadRecipesList();
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.img {
+  width: 64px;
+}
+</style>

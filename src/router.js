@@ -6,8 +6,6 @@ import PizzaList from "./components/PizzaMenuPage/c/PizzaList";
 import About from "@/pages/About";
 import Basket from "@/pages/Basket";
 
-
-
 import AddPizza from "@/pages/AddPizza";
 import AddNewIngredient from "@/pages/AddNewIngredient";
 

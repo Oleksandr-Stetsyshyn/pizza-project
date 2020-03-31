@@ -2,18 +2,18 @@ export default {
     // namespaced: true,
 
     state: {
-        recipesList: [],
+        ingredientsList: [],
         loading: false,
         error: null
     },
     getters: {
-        getRecipesList: state => state.recipesList,
-        isLoadingRecipe: state => state.loading,
-        isErrorRecipe: state => state.error
+        getIngredientsList: state => state.ingredientsList,
+        isLoading: state => state.loading,
+        isError: state => state.error
     },
     mutations: {
-        setRecipesList(state, data) {
-            state.recipesList = [...data]
+        setIngredientsList(state, data) {
+            state.ingredientsList = [...data]
         },
         setLoading(state, loadingStatus) {
             state.loading = loadingStatus
@@ -26,24 +26,24 @@ export default {
 
 
     actions: {
-        loadRecipesList({ commit }) {
+        loadIngredientsList({ commit }) {
             commit('setLoading', true)
             commit('setError', null)
 
             const db = this.$firebase.firestore();
-            db.collection("recipes")
+            db.collection("ingredients")
                 .get()
                 .then(
                     snap => {
                         if (snap.empty)
                             throw new Error('Empty')
 
-                        const recipes = [];
+                        const ingredients = [];
                         snap.forEach(doc => {
-                            recipes.push({ id: doc.id, ...doc.data() });
+                            ingredients.push({ id: doc.id, ...doc.data() });
                         }
                         );
-                        commit('setRecipesList', recipes);
+                        commit('setIngredientsList', ingredients);
                     })
                 .catch(
                     (err) => {
@@ -56,14 +56,14 @@ export default {
                 })
         },
 
-        saveRecipe({ commit, dispatch }, { recipeId, name, price, species, img }) {
+        saveIngredient({ commit, dispatch }, { ingredientId, name, price, species, img }) {
             commit('setLoading', true)
             commit('setError', null)
 
             const db = this.$firebase.firestore();
-            if (!recipeId) {
+            if (!ingredientId) {
                 // Add a new document in collection
-                db.collection("recipes")
+                db.collection("ingredients")
                     .doc()
                     .set({
                         name,
@@ -73,7 +73,7 @@ export default {
                     })
                     .then(function () {
                         console.log("Document successfully written!");
-                        dispatch('loadRecipesList')
+                        dispatch('loadIngredientsList')
                     })
                     .catch(function (error) {
                         console.error("Error writing document: ", error);
@@ -84,8 +84,8 @@ export default {
                     })
             } else {
                 // Change a document in collection
-                db.collection("recipes")
-                    .doc(recipeId)
+                db.collection("ingredients")
+                    .doc(ingredientId)
                     .set({
                         name,
                         price,
@@ -94,7 +94,7 @@ export default {
                     })
                     .then(function () {
                         console.log("Document successfully written!");
-                        dispatch('loadRecipesList')
+                        dispatch('loadIngredientsList')
                     })
                     .catch(function (error) {
                         console.error("Error writing document: ", error);
@@ -106,16 +106,16 @@ export default {
             }
         },
 
-        deleteRecipe({ commit, dispatch},{id}) {
+        deleteIngredient({ commit, dispatch},{id}) {
             alert(id)
             // Delete a document from collection
             const db = this.$firebase.firestore();
-            db.collection("recipes")
+            db.collection("ingredients")
                 .doc(id)
                 .delete()
                 .then(function () {
                     console.log("Document successfully written!");
-                    dispatch('loadRecipesList')
+                    dispatch('loadIngredientsList')
                 })
                 .catch(function (error) {
                     console.error("Error writing document: ", error);
@@ -124,7 +124,7 @@ export default {
                 .finally(() => {
                     commit('setLoading', false)
                 });
-            this.loadRecipesList();
+            this.loadIngredientsList();
         }
     }
 }
