@@ -15,8 +15,8 @@ const store = new Vuex.Store({
     modules: {
         cart,
         pizzaRecipe,
-        addIngredientToDataBase
-    }
+        addIngredientToDataBase,
+     }
 })
 
 export default store;

@@ -4,90 +4,76 @@
       <div class="tile">
         <div class="tile is-parent">
           <article class="tile is-child notification">
-            <p class="title">Редагування рецептів</p>
+            <p class="title">Рецепти</p>
             <p class="subtitle">Додайте новий рецепт</p>
-                      <div class="content">
-              
-                <section>
-                  <b-field>
-                    <b-input placeholder="Id" type="text" v-model="recipeId" required></b-input>
-                  </b-field>
-                  <b-field>
-                    <b-input placeholder="Назва" type="text" v-model="name" required></b-input>
-                  </b-field>
-                  <b-field>
-                    <b-input
-                      placeholder="Ціна"
-                      type="number"
-                      min="50"
-                      max="250"
-                      v-model="price"
-                      required
-                    ></b-input>
-                  </b-field>
+            <div class="content">
+              <section>
+                <b-field>
+                  <b-input placeholder="Id" type="text" v-model="recipeId" required></b-input>
+                </b-field>
+                <b-field>
+                  <b-input placeholder="Назва" type="text" v-model="name" required></b-input>
+                </b-field>
+                <b-field>
+                  <b-input
+                    placeholder="Ціна"
+                    type="number"
+                    min="50"
+                    max="250"
+                    v-model="price"
+                    required
+                  ></b-input>
+                </b-field>
 
-                  <h3>Інгрідієнти:</h3>
+                <h3>Інгрідієнти:</h3>
 
-                 <!-- не відображається -->
-                 <IngredientsChecker/>
-                 
-                  <!-- <div class="block">
-                    <b-radio v-model="species" name="name" native-value="sauces">Соуси</b-radio>
-                    <b-radio v-model="species" name="name" native-value="cheeses">Сири</b-radio>
-                    <b-radio v-model="species" name="name" native-value="vegetables">Зелень</b-radio>
-                    <b-radio v-model="species" name="name" native-value="meat">Мясо і риба</b-radio>
-                  </div>
-                  <p class="content">
-                    <b>Selection:</b>
-                    {{ species }}
-                  </p> -->
+                <IngredientsChecker @clickFilterBtn="filterByIngredients" class="filter" />
 
-                  <div>
-                    Фото:
-                    <input type="file" @change="onSelect" />
-                    <img v-if="tmpImage" :src="tmpImage" class="img" />
-                  </div>
-                  <br />
-                  <div class="level">
-                    <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>
-                    <b-button
-                      type="is-success"
-                      class="level-right"
-                      :disabled="!isDataValid"
-                      @click="onSave"
-                    >{{ buttonTitle }}</b-button>
-                  </div>
-                </section>
-                <br />
-                <br />
-                <label>База даних інгрідієнтів підключена до firebase</label>
-                <br />
-                <div v-if="isLoading">Loading ...</div>
-                <div v-if="isError">Помилка, їжте хліб</div>
-                <div v-if="!isLoading && ! isError">
-                  <table border="2px">
-                    <tr>
-                      <td>Id</td>
-                      <td>Назва</td>
-                      <td>Ціна</td>
-                      <td>Фото</td>
-                      <td>Редагування</td>
-                    </tr>
-                    <tr v-for="recipe in getRecipesList" :key="recipe.id">
-                      <td>{{ recipe.id }}</td>
-                      <td>{{ recipe.name }}</td>
-                      <td>{{ recipe.price }}</td>
-                      <td>
-                        <img v-if="recipe.img" :src="recipe.img" class="img" />
-                      </td>
-                      <td>
-                        <button @click="onDelete(recipe.id)">Видалити</button>
-                        <button @click="onEdit(recipe)">Редагувати</button>
-                      </td>
-                    </tr>
-                  </table>
+                <div>
+                  Фото:
+                  <input type="file" @change="onSelect" />
+                  <img v-if="tmpImage" :src="tmpImage" class="img" />
                 </div>
-              
+                <br />
+                <div class="level">
+                  <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>
+                  <b-button
+                    type="is-success"
+                    class="level-right"
+                    :disabled="!isDataValid"
+                    @click="onSave"
+                  >{{ buttonTitle }}</b-button>
+                </div>
+              </section>
+              <br />
+              <br />
+              <label>База даних інгрідієнтів підключена до firebase</label>
+              <br />
+              <div v-if="isLoading">Loading ...</div>
+              <div v-if="isError">Помилка, їжте хліб</div>
+              <div v-if="!isLoading && ! isError">
+                <table border="2px">
+                  <tr>
+                    <td>Id</td>
+                    <td>Назва</td>
+                    <td>Ціна</td>
+                    <td>Фото</td>
+                    <td>Редагування</td>
+                  </tr>
+                  <tr v-for="recipe in getRecipesList" :key="recipe.id">
+                    <td>{{ recipe.id }}</td>
+                    <td>{{ recipe.name }}</td>
+                    <td>{{ recipe.price }}</td>
+                    <td>
+                      <img v-if="recipe.img" :src="recipe.img" class="img" />
+                    </td>
+                    <td>
+                      <button @click="onDelete(recipe.id)">Видалити</button>
+                      <button @click="onEdit(recipe)">Редагувати</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </article>
         </div>
@@ -108,18 +94,18 @@ import IngredientsChecker from "@/components/IngredientsChecker";
 
 export default {
   name: "AddNewRecipe",
-components: {
-   IngredientsChecker
+  components: {
+    IngredientsChecker
   },
   data() {
     return {
       recipeId: null,
       name: null,
       price: null,
-      // weight: null,
       species: null,
       img: null,
-      tmpImage: null
+      tmpImage: null,
+      selectedIngredients: null
     };
   },
   computed: {
@@ -134,19 +120,20 @@ components: {
         this.recipeId &&
         this.name &&
         this.price > 0 &&
-        // this.weight &&
-        this.species
+        this.tmpImage &&
+        this.selectedIngredients.length > 0
       );
     }
   },
 
   methods: {
-    ...mapActions([
-      "loadRecipesList",
-      "saveRecipe",
-      "deleteRecipe"
-    ]),
+     filterByIngredients(selectedIngredients) {
+      this.selectedIngredients = selectedIngredients
+     },
 
+    ...mapActions(["loadRecipesList", "saveRecipe", "deleteRecipe"]),
+
+   
     onSave() {
       this.saveRecipe({
         recipeId: this.recipeId,
@@ -154,7 +141,8 @@ components: {
         price: this.price,
         // weight: this.weight,
         species: this.species,
-        img: this.tmpImage
+        img: this.tmpImage,
+        ingredientsArr: this.selectedIngredients
       });
       this.clearData();
     },
@@ -163,8 +151,8 @@ components: {
       this.recipeId = null;
       this.name = null;
       this.price = null;
-      // this.weight = null;
       this.species = null;
+      this.selectedIngredients = null;
     },
 
     onDelete(id) {
@@ -178,6 +166,7 @@ components: {
       this.price = recipe.price;
       this.species = recipe.species;
       this.tmpImage = recipe.img;
+      this.selectedIngredients = recipe.ingredientsArr;
     },
 
     onCancel() {

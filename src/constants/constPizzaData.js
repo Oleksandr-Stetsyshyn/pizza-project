@@ -93,7 +93,7 @@
     {
         id: 'vitello',
         name: "Віталік",
-        price: 123,
+        price: 490,
         ingredients: ['creamSauce', 'mozarella', 'ham', 'salami', 'bacon', 'oregano']
 
     }

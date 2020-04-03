@@ -56,7 +56,7 @@ export default {
                 })
         },
 
-        saveRecipe({ commit, dispatch }, { recipeId, name, price, species, img }) {
+        saveRecipe({ commit, dispatch }, { recipeId, name, price, species, img, ingredientsArr }) {
             commit('setLoading', true)
             commit('setError', null)
 
@@ -69,7 +69,8 @@ export default {
                         name,
                         price,
                         species,
-                        img
+                        img,
+                        ingredientsArr
                     })
                     .then(function () {
                         console.log("Document successfully written!");
@@ -90,7 +91,8 @@ export default {
                         name,
                         price,
                         species,
-                        img
+                        img,
+                        ingredientsArr
                     })
                     .then(function () {
                         console.log("Document successfully written!");
