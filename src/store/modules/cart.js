@@ -2,13 +2,7 @@ export default {
     namespaced: true,
 
     state: {
-      cart: [ {
-        id: 'constructor',
-        name: "Конструктор",
-        price: 50,
-        amount: 300,
-        ingredients: [] }
-        , 
+      cart: [
         { id: 'milano',
         name: "Міланська",
         price: 124,

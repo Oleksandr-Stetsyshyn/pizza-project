@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import cart from './modules/cart'
 import pizzaRecipe from './modules/pizzaRecipe'
 import addIngredientToDataBase from './modules/addIngredientToDataBase'
+import authorization from './modules/authorization'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,7 @@ const store = new Vuex.Store({
         cart,
         pizzaRecipe,
         addIngredientToDataBase,
+        authorization
      }
 })
 

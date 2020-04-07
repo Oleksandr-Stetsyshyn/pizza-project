@@ -11,10 +11,14 @@
 
       <template slot="start">
         <b-navbar-item tag="router-link" :to="{ path: '/menu' }">Піца</b-navbar-item>
-        <!-- <b-navbar-item tag="router-link" :to="{ path: '/addIngredientsToItem/constructor' }" >Створити власну</b-navbar-item> -->
         <b-navbar-item tag="router-link" :to="{ path: '/stock' }">Акції</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ path: '/delivery' }">Доставка і оплата</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ path: '/about' }">Про нас</b-navbar-item>
+        <b-navbar-item tag="router-link" v-if="!userLogedIn" :to="{ path: '/login' }">Логін</b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ path: '/register' }">Реєстрація</b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ path: '/authr' }">АВТОРИЗАЦІЯ</b-navbar-item>
+
+
 
         <b-navbar-dropdown label="Адмін меню">
           <b-navbar-item tag="router-link" :to="{ path: '/addPizza' }">Додати рецепт</b-navbar-item>
@@ -69,7 +73,12 @@ export default {
     ...mapGetters("cart", ["getProductsCountInCart"]),
     cartLenght() {
       return this.getProductsCountInCart();
+    },
+
+userLogedIn () {
+      return this.$store.getters.user
     }
+
   }
 };
 </script>
