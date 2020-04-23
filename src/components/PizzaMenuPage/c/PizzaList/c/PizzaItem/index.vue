@@ -9,23 +9,21 @@
       <h3>{{ pizza.name }}</h3>
 
       <div class="content">
-        <h6>Склад:</h6>
         <li v-for="item in pizza.ingredients" :key="item">
           <img :src="require(`@/assets/images/ingredients/${item}.jpg`)" width="20" />
           {{item}}
         </li>
 
-<router-link
+        <router-link
           class="button is-text is-right"
           tag="button"
           :to="`/addIngredientsToItem/${pizza.id}`"
         >
-          <strong>+інгрeдієнт</strong>
+          <strong>додати інгрeдієнти</strong>
         </router-link>
-       </div>
+      </div>
       <h3>{{ pizza.price }} Грн.</h3>
       <div>
-        
         <button class="button is-success" tag="button" @click="onAddToCart(pizza.id)">
           <strong>Замовити</strong>
         </button>

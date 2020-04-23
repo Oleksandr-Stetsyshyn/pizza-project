@@ -117,7 +117,7 @@ export default {
       ingredientId: null,
       name: null,
       price: null,
-          species: null,
+      species: null,
       img: null,
       tmpImage: null
     };

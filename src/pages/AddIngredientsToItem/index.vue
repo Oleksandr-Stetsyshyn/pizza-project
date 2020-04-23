@@ -11,6 +11,9 @@
                 <b-slider-tick :value="3">Auto</b-slider-tick>
             </b-slider>
         </b-field>
+
+
+        
     </li>
  
  

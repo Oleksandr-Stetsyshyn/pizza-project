@@ -10,7 +10,16 @@ import * as firebase from 'firebase'
 import 'buefy/dist/buefy.css'
 import "./firebase-config"
 
-Vue.use(Buefy)
+import "font-awesome/css/font-awesome.min.css";
+
+
+// Vue.use(Buefy)
+Vue.use(Buefy, {
+  defaultIconPack: 'fas',
+  defaultContainerElement: '#content',
+})
+Vue.component('VueFontawesome', require('vue-fontawesome-icon/VueFontawesome.vue').default);
+
 
 Vue.prototype.$firebase = firebase;
 store.$firebase = firebase;

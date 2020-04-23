@@ -9,7 +9,7 @@
           :native-value="ingredientInfo.id"
           type="is-success"
         >
-          <b-icon icon="check"></b-icon>
+          <!-- <b-icon icon="check"></b-icon> -->
           <img :src="require(`@/assets/images/ingredients/${ingredientInfo.id}.jpg`)" width="20" />
           <span>{{ ingredientInfo.name }}</span>
         </b-checkbox-button>

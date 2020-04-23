@@ -1,5 +1,6 @@
 <template>
   <div>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <b-carousel>
       <b-carousel-item v-for="(item, i) in 6" :key="i">
         <span class="image">

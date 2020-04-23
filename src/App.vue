@@ -18,8 +18,6 @@
         <b-navbar-item tag="router-link" :to="{ path: '/register' }">Реєстрація</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ path: '/authr' }">АВТОРИЗАЦІЯ</b-navbar-item>
 
-
-
         <b-navbar-dropdown label="Адмін меню">
           <b-navbar-item tag="router-link" :to="{ path: '/addPizza' }">Додати рецепт</b-navbar-item>
           <b-navbar-item
@@ -42,8 +40,6 @@
             <!-- <router-link class="button is-primary" tag="button" to="/login">
               <strong>Вхід</strong>
             </router-link>-->
-
-           
           </div>
         </b-navbar-item>
       </template>
@@ -53,7 +49,10 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Pizza "Riccio di Mare" by <a href="https://www.linkedin.com/in/stetsyshyn/">Oleksandr Stetsyshyn</a> looking for work</strong>
+          <strong>
+            Pizza "Riccio di Mare" by
+            <a href="https://www.linkedin.com/in/stetsyshyn/">Oleksandr Stetsyshyn</a> looking for work
+          </strong>
         </p>
       </div>
     </footer>
@@ -63,11 +62,8 @@
 <script>
 import { mapGetters } from "vuex";
 
-
 export default {
   name: "App",
-
-
 
   computed: {
     ...mapGetters("cart", ["getProductsCountInCart"]),
@@ -75,10 +71,9 @@ export default {
       return this.getProductsCountInCart();
     },
 
-userLogedIn () {
-      return this.$store.getters.user
+    userLogedIn() {
+      return this.$store.getters.user;
     }
-
   }
 };
 </script>

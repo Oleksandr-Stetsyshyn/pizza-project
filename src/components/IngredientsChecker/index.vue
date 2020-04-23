@@ -13,7 +13,7 @@
               :native-value="ingredient.id"
               type="is-success"
             >
-              <b-icon icon="check"></b-icon>
+              <!-- <b-icon icon="check"></b-icon> -->
               <img v-if="ingredient.img" :src="ingredient.img" class="img" width="20" />
               <span>{{ ingredient.name }}</span>
             </b-checkbox-button>
