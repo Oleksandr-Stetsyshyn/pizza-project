@@ -56,7 +56,7 @@ export default {
                 })
         },
 
-        saveIngredient({ commit, dispatch }, { ingredientId, name, price, species, img }) {
+        saveIngredient({ commit, dispatch }, { ingredientId, name, price, weight, portion, species, img }) {
             commit('setLoading', true)
             commit('setError', null)
 
@@ -68,6 +68,8 @@ export default {
                     .set({
                         name,
                         price,
+                        weight,
+                        portion,
                         species,
                         img
                     })
@@ -89,6 +91,8 @@ export default {
                     .set({
                         name,
                         price,
+                        weight,
+                        portion,
                         species,
                         img
                     })

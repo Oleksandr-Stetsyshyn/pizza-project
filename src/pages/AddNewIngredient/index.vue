@@ -12,86 +12,94 @@
               />
             </figure>-->
             <div class="content">
-              
-                <section>
-                  <b-field>
-                    <b-input placeholder="Id" type="text" v-model="ingredientId" required></b-input>
-                  </b-field>
-                  <b-field>
-                    <b-input placeholder="Назва" type="text" v-model="name" required></b-input>
-                  </b-field>
-                  <b-field>
-                    <b-input
-                      placeholder="Ціна"
-                      type="number"
-                      min="3"
-                      max="90"
-                      v-model="price"
-                      required
-                    ></b-input>
-                  </b-field>
+              <section>
+                <b-field>
+                  <b-input placeholder="Id" type="text" v-model="ingredientId" required></b-input>
+                </b-field>
+                <b-field>
+                  <b-input placeholder="Назва" type="text" v-model="name" required></b-input>
+                </b-field>
+                <b-field>
+                  <b-input
+                    placeholder="Порція"
+                    type="number"
+                    min="5"
+                    max="150"
+                    v-model="weight"
+                    required
+                  ></b-input>
+                </b-field>
+                <b-field>
+                  <b-input
+                    placeholder="Ціна"
+                    type="number"
+                    min="3"
+                    max="90"
+                    v-model="price"
+                    required
+                  ></b-input>
+                </b-field>
 
-                  <h3>Категорія:</h3>
-                  <div class="block">
-                    <b-radio v-model="species" name="name" native-value="sauces">Соуси</b-radio>
-                    <b-radio v-model="species" name="name" native-value="cheeses">Сири</b-radio>
-                    <b-radio v-model="species" name="name" native-value="vegetables">Зелень</b-radio>
-                    <b-radio v-model="species" name="name" native-value="meat">Мясо і риба</b-radio>
-                  </div>
-                  <p class="content">
-                    <b>Selection:</b>
-                    {{ species }}
-                  </p>
-
-                  <div>
-                    Фото:
-                    <input type="file" @change="onSelect" />
-                    <img v-if="tmpImage" :src="tmpImage" class="img" />
-                  </div>
-                  <br />
-                  <div class="level">
-                    <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>
-                    <b-button
-                      type="is-success"
-                      class="level-right"
-                      :disabled="!isDataValid"
-                      @click="onSave"
-                    >{{ buttonTitle }}</b-button>
-                  </div>
-                </section>
-                <br />
-                <br />
-                <label>База даних інгрідієнтів підключена до firebase</label>
-                <br />
-                <div v-if="isLoading">Loading ...</div>
-                <div v-if="isError">Помилка, їжте хліб</div>
-                <div v-if="!isLoading && ! isError">
-                  <table border="2px">
-                    <tr>
-                      <td>Id</td>
-                      <td>Назва</td>
-                      <td>Ціна</td>
-                      <td>Фото</td>
-                      <td>Редагування</td>
-                    </tr>
-
-
-                    
-                    <tr v-for="ingredient in getIngredientsList" :key="ingredient.id">
-                      <td>{{ ingredient.id }}</td>
-                      <td>{{ ingredient.name }}</td>
-                      <td>{{ ingredient.price }}</td>
-                      <td>
-                        <img v-if="ingredient.img" :src="ingredient.img" class="img" />
-                      </td>
-                      <td>
-                        <button @click="onDelete(ingredient.id)">Видалити</button>
-                        <button @click="onEdit(ingredient)">Редагувати</button>
-                      </td>
-                    </tr>
-                  </table>
+                <h3>Категорія:</h3>
+                <div class="block">
+                  <b-radio v-model="species" name="name" native-value="sauces">Соуси</b-radio>
+                  <b-radio v-model="species" name="name" native-value="cheeses">Сири</b-radio>
+                  <b-radio v-model="species" name="name" native-value="vegetables">Зелень</b-radio>
+                  <b-radio v-model="species" name="name" native-value="meat">Мясо і риба</b-radio>
                 </div>
-              
+                <p class="content">
+                  <b>Selection:</b>
+                  {{ species }}
+                </p>
+
+                <div>
+                  Фото:
+                  <input type="file" @change="onSelect" />
+                  <img v-if="tmpImage" :src="tmpImage" class="img" />
+                </div>
+                <br />
+                <div class="level">
+                  <b-button type="is-danger" class="level-left" @click="onCancel">Cancel</b-button>
+                  <b-button
+                    type="is-success"
+                    class="level-right"
+                    :disabled="!isDataValid"
+                    @click="onSave"
+                  >{{ buttonTitle }}</b-button>
+                </div>
+              </section>
+              <br />
+              <br />
+              <label>База даних інгрідієнтів підключена до firebase</label>
+              <br />
+              <div v-if="isLoading">Loading ...</div>
+              <div v-if="isError">Помилка, їжте хліб</div>
+              <div v-if="!isLoading && ! isError">
+                <table border="2px">
+                  <tr>
+                    <td>Id</td>
+                    <td>Назва</td>
+                    <td>Вага</td>
+                    <td>Ціна</td>
+                    <td>Фото</td>
+                    <td>Редагування</td>
+                  </tr>
+
+                  <tr v-for="ingredient in getIngredientsList" :key="ingredient.id">
+                    <td>{{ ingredient.id }}</td>
+                    <td>{{ ingredient.name }}</td>
+                    <td>{{ ingredient.weight }}</td>
+                    <td>{{ ingredient.price }}</td>
+                    <td>
+                      <img v-if="ingredient.img" :src="ingredient.img" class="img" />
+                    </td>
+                    <td>
+                      <button @click="onDelete(ingredient.id)">Видалити</button>
+                      <button @click="onEdit(ingredient)">Редагувати</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </article>
         </div>
@@ -116,6 +124,8 @@ export default {
     return {
       ingredientId: null,
       name: null,
+      weight: null,
+      portion: 1,
       price: null,
       species: null,
       img: null,
@@ -134,7 +144,7 @@ export default {
         this.ingredientId &&
         this.name &&
         this.price > 0 &&
-        // this.weight &&
+        this.weight &&
         this.species
       );
     }
@@ -152,7 +162,8 @@ export default {
         ingredientId: this.ingredientId,
         name: this.name,
         price: this.price,
-        // weight: this.weight,
+        weight: this.weight,
+        portion: 1,
         species: this.species,
         img: this.tmpImage
       });
@@ -163,7 +174,7 @@ export default {
       this.ingredientId = null;
       this.name = null;
       this.price = null;
-      // this.weight = null;
+      this.weight = null;
       this.species = null;
     },
 
